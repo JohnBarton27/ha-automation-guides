@@ -148,18 +148,22 @@ Message: Palm Bay water bill jumped 31.2% — was $112.45, now $147.43.
 ## Extending This
 
 **Add email notification on spike**
+
 Add a second action in the spike `sequence` using `notify.smtp` (if configured) or
 a `rest_command` to a notification service of your choice.
 
 **Track history over time**
+
 Create a `statistics` helper sourced from `input_number.water_bill_current_month`
 to surface trends in a dashboard card.
 
 **Add to an energy/utility dashboard**
+
 Both `input_number` helpers can be added directly to an Entities card or a
 Statistics card for a month-over-month view.
 
 **Adjust the spike threshold**
+
 The 25% threshold is hardcoded in the automation condition
 (`old_amount * 1.25`). To make it user-adjustable, create an
 `input_number.water_bill_spike_threshold` helper (e.g., range 5–100, default 25)
